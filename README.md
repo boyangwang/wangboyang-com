@@ -28,7 +28,7 @@ wangboyang.com
   git clone https://github.com/boyangwang/Courselooper-Server.git &&
   git clone https://github.com/boyangwang/2013-mobile-group-5.git &&
   git clone https://github.com/boyangwang/laughing-avenger.git &&
-  git clone https://github.com/boyangwang/Retailer 
+  git clone https://github.com/boyangwang/Retailer
   ```
 
 4. create symlink for apacheVirtualHost. Note .conf is required
@@ -73,7 +73,7 @@ wangboyang.com
   Change db_host variable in WCFUN.php
   Create user WCFUN:password@'%', grant privileges
   NO that is not quite right! Remember % somehow doesn't work. Use localhost instead.
-  Turn on remote access for MySQL, comment out in my.cnf: 
+  Turn on remote access for MySQL, comment out in my.cnf:
   skip-networking
   bind-address = 127.0.0.1
   Open port 3306 if needed
@@ -84,11 +84,11 @@ wangboyang.com
 2. install mongo
   ```
   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-  
+
   echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-  
+
   sudo apt-get update
-  
+
   sudo apt-get install -y mongodb-org
   ```
 
@@ -105,5 +105,18 @@ wangboyang.com
         ...[ORIGINAL DIRECTIVES BELOW]
   </VirtualHost>
   ```
-  
+
 3. crontab `0 12 * * * /root/certbot-auto renew --quiet --no-self-upgrade`
+
+## New Setup
+```
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - &&
+sudo apt-get install -y nodejs git nginx letsencrypt &&
+npm install -g forever &&
+cd /var/www/ &&
+git clone https://github.com/boyangwang/wangboyang-com.git &&
+rm /etc/nginx/sites-enabled/default &&
+letsencrypt certonly --webroot -w /var/www/wangboyang-com/src/ -d wangboyang.com -d www.wangboyang.com &&
+ln -s /var/www/wangboyang-com/src/nginx.conf /etc/nginx/sites-enabled/wangboyang-com.conf &&
+service nginx restart
+```
