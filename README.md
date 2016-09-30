@@ -93,15 +93,20 @@ wangboyang.com
   ```
 
 ## HTTPS/SSL/TLS
-1. `a2enmod ssl`
-2. apache conf, add
+1.
+  ```
+  ~/certbot-auto certonly --standalone -d wangboyang.com -d www.wangboyang.com -d retailer.wangboyang.com -d courselooper.wangboyang.com -d taak.wangboyang.com -d blog.wangboyang.com -d misc.wangboyang.com -d phpmyadmin.wangboyang.com -d fragen.wangboyang.com -d viperjs.wangboyang.com
+  ```
+
+2. `a2enmod ssl`
+3. apache conf, add
   ```
   <VirtualHost *:443>
         ServerName wangboyang.com
         ServerAlias www.wangboyang.com
         SSLEngine on
-        SSLCertificateFile "/etc/letsencrypt/live/wangboyang.com/fullchain.pem"
-        SSLCertificateKeyFile "/etc/letsencrypt/live/wangboyang.com/privkey.pem"
+        SSLCertificateFile "/etc/letsencrypt/live/wangboyang.com-0002/fullchain.pem"
+        SSLCertificateKeyFile "/etc/letsencrypt/live/wangboyang.com-0002/privkey.pem"
         ...[ORIGINAL DIRECTIVES BELOW]
   </VirtualHost>
   ```
