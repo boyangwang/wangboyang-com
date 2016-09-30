@@ -20,5 +20,14 @@ forever start -a -l /home/boyang/Projects/wangboyang.com-project/logs/forever_co
               --pidFile /home/boyang/Projects/wangboyang.com-project/logs/courselooper.pid \
               /home/boyang/Projects/wangboyang.com-project/courselooper/app.js
 
+echo "Doing retailer"
+cd /home/boyang/Projects/wangboyang.com-project/Retailer/src
+forever start -a -l /home/boyang/Projects/wangboyang.com-project/logs/retailer.log \
+            -o /home/boyang/Projects/wangboyang.com-project/logs/retailer.log \
+            -e /home/boyang/Projects/wangboyang.com-project/logs/retailer.log \
+            --uid retailer \
+            --pidFile /home/boyang/Projects/wangboyang.com-project/logs/retailer.pid \
+            /home/boyang/Projects/wangboyang.com-project/retailer/src/app.js
+
 forever list
 echo "Done"
