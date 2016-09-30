@@ -93,7 +93,7 @@ wangboyang.com
   ```
 
 ## HTTPS/SSL/TLS
-1.
+1. get certs
   ```
   ~/certbot-auto certonly --standalone -d wangboyang.com -d www.wangboyang.com -d retailer.wangboyang.com -d courselooper.wangboyang.com -d taak.wangboyang.com -d blog.wangboyang.com -d misc.wangboyang.com -d phpmyadmin.wangboyang.com -d fragen.wangboyang.com -d viperjs.wangboyang.com
   ```
@@ -111,7 +111,7 @@ wangboyang.com
   </VirtualHost>
   ```
 
-3. crontab `0 12 * * * /root/certbot-auto renew --quiet --no-self-upgrade`
+4. crontab `0 12 * * * /root/certbot-auto renew --quiet --no-self-upgrade`
 
 ## New Setup
 ```
