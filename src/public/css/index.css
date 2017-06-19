@@ -1,0 +1,676 @@
+/*------------------------------GLOBAL---------------------------*/
+
+/*This section makes all box sizing to be border box, so that width is measured inclusive of border+padding*/
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+	/*Please don't display newline!*/
+	font-size: 0;
+	color: #e5e5e5;
+	/*Used for auto-sizing background*/
+	background: inherit;
+	background-image: url(../img/bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	/*can't squeeze too little!*/
+	min-width: 630px;
+}
+
+button {
+	/*Should be pointer right?*/
+	cursor: pointer;
+}
+
+a, a:hover, a:focus {
+	text-decoration: none;
+	cursor: pointer;
+	color: inherit;
+}
+
+.transition-change-button, .transition-change-button:focus, .dropdown-menu>li>a {
+	transition: background 0.6s, color 0.6s;
+	/*Becasut it's overriden by bootstrap*/
+	color: #e5e5e5;
+}
+
+.transition-change-button:hover, .dropdown-menu>li>a:hover {
+	transition: background 0.6s, color 0.6s;
+	/*revert it for the transition effect*/
+	background-color: #e5e5e5;
+	color: #434857;
+}
+
+/*------------------------------GLOBAL---------------------------*/
+
+/*------------------------------INDIVIDUAL-----------------------*/
+/*The sequence being from top to bottom, left to right, outter to inner, which is basically HTML APPEARING SEQUENCE*/
+
+.first-page-div {
+	/*So that it's not directly touching edge*/
+	margin-top: 10px;
+	position: relative;
+}
+
+.header-div {
+	/*Because need some absolute elements to position against this*/
+	position: relative;
+	/*So that it's not directly touching edge*/
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.logo-wrapper-div {
+	/*Obviously I need something on the same row*/
+	display: inline-block;
+}
+
+.logo-img {
+	/*Fixed size logo. Width is taken care auto because it preserves ratio*/
+	height: 80px;
+}
+
+.youve-entered-p {
+       font-weight: 400;
+       font-family: "Enriqueta-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+       font-size: 30px;
+       /*Gap between logo and youve-entered*/
+       margin-left: 10px;
+       /*So that I can pull down for just 10px*/
+       position: relative;
+       top: 10px;
+}
+
+.header-nav-div {
+	/*I was using absolute and right: 0; but I always prefer relative to not mess up the flow*/
+	float: right;
+	position: relative;
+	display: inline-block;
+	/*10 + 20 pretty much make it same level as left*/
+	margin-top: 20px;
+}
+.navbar-item-a {
+  margin-left: 30px;
+}
+
+.main-container-item-a {
+  margin-left: 40px;
+}
+
+.navbar-item-a, .main-container-item-a {
+	text-transform: uppercase;
+    padding: .4em .8em;
+    margin-top: .6em;
+    margin-bottom: .6em;
+    margin-right: 0;
+	border: 2px solid #e5e5e5;
+}
+
+.navbar-item-a, .dropdown-menu>li>a, .main-container-item-a {
+	font-size: 20px;
+	font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 2em;
+}
+
+.dropdown-menu>li>a {
+	padding: 3px 12px;
+}
+
+.dropdown-menu {
+	/*to be on same place as projects button*/
+	margin-left: 30px;
+	background-color: inherit;
+	/*merge border with projects button*/
+	border: 2px solid #e5e5e5;
+	margin-top: 0;
+	border-radius: 0;
+	padding: 0;
+}
+
+.dropdown-menu>li>a:hover {
+	background-image: none;
+}
+
+.main-container-div {
+	background-color: rgba(0, 0, 0, 0.5);
+	/*Has to be absolute because we don't know how much to pull down*/
+	position: absolute;
+	/*to center align*/
+	left: 15%;
+	right: 15%;
+	width: auto;
+
+	bottom: 60px;
+	min-width: 420px;
+
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+@media (min-width: 1280px) {
+	.main-container-div {
+		/*max width when screen very wide*/
+		width: 900px;
+		left: 50%;
+		margin-left: -450px;
+	}
+}
+
+@media (min-width: 1800px) {
+.container {
+    width: 1600px;
+}
+}
+
+.developer-p {
+	font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 80px;
+    line-height: 1.2em;
+    text-transform: none;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    transition: font-size 0.6s;
+    margin-top: 0;
+}
+
+@media (max-width: 799px) {
+	.developer-p {
+		font-size: 60px;
+		transition: font-size 0.6s;
+	}
+}
+
+.resume-blog-div {
+	/*fixed width and center align*/
+	width: 340px;
+	margin-left: -170px;
+	left: 50%;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.downward-arrow-div {
+	bottom: 12px;
+	/*It's ok to take downward arrow out of flow because we set height of first page in JS*/
+	position: absolute;
+	height: 48px;
+}
+
+.upward-arrow-div {
+	height: 60px;
+	position: fixed;
+}
+
+.downward-arrow-div, .upward-arrow-div {
+	/*though relatively positioned, this still aligns it center*/
+	width: 60px;
+	display: block;
+	left: 50%;
+	margin-left: -30px;
+  padding-top: 15px;
+  line-height: 20px;
+
+	color: #fff;
+	font-size: 32px;
+	font-weight: normal;
+	text-shadow: 0px 0px 2px #e5e5e5;
+	font-weight: bold;
+	text-align: center;
+	font-style: normal;
+	font-family: 'squarespace-ui-font';
+	-webkit-font-smoothing: antialiased;
+
+	transition: all .6s ease;
+}
+
+.downward-arrow-div:before, .upward-arrow-div:before {
+	display: inline-block;
+	speak: none;
+	content: "\e02d";
+	position: absolute;
+	bottom: 12px;
+}
+
+.downward-arrow-div:before {
+	-ms-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.upward-arrow-div:before {
+	-ms-transform: rotate(270deg);
+	-webkit-transform: rotate(270deg);
+	transform: rotate(270deg);
+}
+
+.downward-arrow-div:hover, .upward-arrow-div:hover {
+	-webkit-animation: feature-text-anim 1.75s ease-in-out;
+    animation: feature-text-anim 1.75s ease-in-out;
+    transition: all .6s ease;
+    color: #000;
+}
+
+.downward-arrow-div:hover {
+	transform: translate(0px, 12px);
+}
+
+.upward-arrow-div:hover {
+	transform: translate(0px, -12px);
+}
+
+.second-page-div {
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 60px;
+  padding-bottom: 40px;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.second-page-div .container {
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.third-page-div {
+  position: relative;
+  background: url("../img/dark_texture.jpg") repeat;
+}
+
+.self-container-div {
+	padding-left: 0;
+  padding-right: 0;
+}
+
+.profile-pic-div {
+	/*float helps not to push text on the right away, as it allows for text to surround it. inline-block doesn't quite work*/
+	float: left;
+	height: 100%;
+	width: 46%;
+	position: relative;
+  overflow: hidden;
+}
+
+.profile-pic-img {
+	position: relative;
+	height: 100%;
+	display: block;
+	min-width: 720px;
+	min-height: 541px;
+	opacity: 0.85;
+}
+
+.selfintro-div {
+	display: inline-block;
+	width: 54%;
+	height: 100%;
+	padding: 30px 20px;
+	position: relative;
+}
+
+.selfintro-p {
+	font-family: "Enriqueta-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 28px;
+    font-style: normal;
+    line-height: 1.4em;
+    margin-bottom: 20px;
+    transition: font-size .6s;
+}
+
+.selfintro-h2 {
+	font-size: 60px;
+	font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+	text-shadow: rgb(42, 42, 42) 0px 3px 8px;
+
+  font-weight: bold;
+  line-height: 60px;
+	margin-bottom: 20px;
+	margin-top: 40px;
+	transition: font-size .6s;
+}
+
+@media (max-width: 1279px) and (min-width: 767px) {
+	.selfintro-p {
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	.profile-pic-img {
+		left: 0;
+		width: 100%;
+	}
+
+	.profile-pic-div, .selfintro-div {
+		width: 100%;
+		height: auto;
+	}
+	.second-page-container-div, .self-container-div {
+		height: auto;
+	}
+}
+
+.footer-div {
+	padding-top: 40px;
+	position: relative;
+}
+
+.footer-texts-div {
+	/*position: absolute;*/
+	/*left: 15%;*/
+	/*right: 15%;*/
+	width: auto;
+  position: relative;
+}
+
+.footer-texts-div h3 {
+	margin: 0px;
+	font-weight: 600;
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 10px;
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.footer-text-network-div, .footer-text-contact-div {
+	font-size: 20px;
+	font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 600;
+	display: inline-block;
+	width: 48%;
+	text-align: center;
+	color: rgba(229, 229, 229, 0.95);
+}
+
+.footer-text-network-div {
+	float: right;
+}
+
+.footer-text-contact-div {
+	float: left;
+	margin-right: 4%;
+}
+
+.footer-text-contact-div p, .footer-text-network-div p {
+	margin-bottom: 30px;
+}
+
+.footer-text-contact-button {
+	text-transform: uppercase;
+  padding: .4em .8em;
+	border: 2px solid #e5e5e5;
+}
+
+.network-site-icons-div i {
+	font-size: 32px;
+	margin: 0px 10px;
+}
+
+.network-site-icons-div i:hover {
+	color: #fff;
+	text-shadow: 0px 0px 8px #e5e5e5;
+}
+
+.copyright-footer-div {
+	width: 100%;
+	font-size: 18px;
+	font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+	text-align: center;
+	color: #8e8e8e;
+	/*position: absolute;*/
+	/*bottom: 10px;*/
+}
+
+.copyright-footer-div hr {
+	border-color: #8e8e8e;
+	margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.copyright-p {
+  margin-bottom: 0;
+  padding-bottom: 5px;
+}
+
+.inner-loader-img {
+  display: none;
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  left: 40%;
+  left: calc(50% - 48px);
+    left: -o-calc(50% - 48px);
+    left: -ms-calc(50% - 48px);
+    left: -webkit-calc(50% - 48px);
+    left: -moz-calc(50% - 48px);
+  top: 40%;
+  top: calc(46% - 48px);
+    top: -o-calc(46% - 48px);
+    top: -ms-calc(46% - 48px);
+    top: -webkit-calc(46% - 48px);
+    top: -moz-calc(46% - 48px);
+}
+
+.inner-loader-div {
+	position: absolute;
+	height: 90px;
+	width: 90px;
+	border-radius: 90px;
+	border: 3px solid	rgb(255,255,255);
+	left: 40%;
+	left: calc(50% - 48px);
+		left: -o-calc(50% - 48px);
+		left: -ms-calc(50% - 48px);
+		left: -webkit-calc(50% - 48px);
+		left: -moz-calc(50% - 48px);
+  top: 40%;
+  top: calc(46% - 48px);
+		top: -o-calc(46% - 48px);
+		top: -ms-calc(46% - 48px);
+		top: -webkit-calc(46% - 48px);
+		top: -moz-calc(46% - 48px);
+	transform-origin: 50% 50%;
+		-o-transform-origin: 50% 50%;
+		-ms-transform-origin: 50% 50%;
+		-webkit-transform-origin: 50% 50%;
+		-moz-transform-origin: 50% 50%;
+	animation: cssload-ball 1.8s linear infinite;
+		-o-animation: cssload-ball 1.8s linear infinite;
+		-ms-animation: cssload-ball 1.8s linear infinite;
+		-webkit-animation: cssload-ball 1.8s linear infinite;
+		-moz-animation: cssload-ball 1.8s linear infinite;
+}
+
+.inner-loader-div:after {
+	content: "";
+	position: absolute;
+	top: -8px;
+	left: 23px;
+	width: 16px;
+	height: 16px;
+	border-radius: 11px;
+	background-color: rgb(255,255,255);
+}
+
+.outer-loader-div {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+
+@keyframes cssload-ball{
+		0%{transform:rotate(0deg);}
+		100%{transform:rotate(360deg);}
+}
+
+@-o-keyframes cssload-ball{
+		0%{-o-transform:rotate(0deg);}
+		100%{-o-transform:rotate(360deg);}
+}
+
+@-ms-keyframes cssload-ball{
+		0%{-ms-transform:rotate(0deg);}
+		100%{-ms-transform:rotate(360deg);}
+}
+
+@-webkit-keyframes cssload-ball{
+		0%{-webkit-transform:rotate(0deg);}
+		100%{-webkit-transform:rotate(360deg);}
+}
+
+@-moz-keyframes cssload-ball{
+		0%{-moz-transform:rotate(0deg);}
+		100%{-moz-transform:rotate(360deg);}
+}
+
+.gallery-div {
+  position: relative;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  overflow: hidden;
+  margin: 40px 0;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+.gallery-div {
+  margin: 0 0;
+}
+}
+
+.vignette {
+  box-shadow: 0 10px 20px #000;
+}
+
+.vignette:after {
+ box-shadow: inset -30px 0 60px #000;
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 9999;
+ content: "";
+}
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 60px;
+  font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  line-height: 60px;
+  margin-bottom: 40px;
+  transition: font-size .6s;
+  text-transform: uppercase;
+}
+
+.gallery-img-wrap-div:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+  content: "";
+  background:rgba(0,0,0,0.5);
+  position: absolute;
+  transition: 0.4s all ease;
+}
+
+.gallery-div .gallery-img-wrap-div img {
+  transition: 0.4s all ease;
+  max-height: 600px;
+  max-width: 100%;
+}
+
+.gallery-div:hover .gallery-img-wrap-div img {
+  transform: scale(1.5);
+}
+
+.gallery-div:hover .gallery-img-wrap-div:after {
+  background:rgba(0,0,0,0.2);
+}
+
+.gallery-div.retailer:hover .gallery-text-wrap-div .gallery-h3, .gallery-div.retailer:hover .gallery-text-wrap-div .gallery-p {
+  color: rgb(32, 32, 32);
+}
+
+.gallery-div.courselooper:hover .gallery-text-wrap-div .gallery-h3, .gallery-div.courselooper:hover .gallery-text-wrap-div .gallery-p {
+  visibility: hidden;
+}
+
+.gallery-div.fragen:hover .gallery-text-wrap-div .gallery-h3, .gallery-div.fragen:hover .gallery-text-wrap-div .gallery-p {
+  visibility: hidden;
+}
+
+.gallery-div.taak:hover .gallery-text-wrap-div .gallery-h3, .gallery-div.taak:hover .gallery-text-wrap-div .gallery-p {
+  color: rgb(32, 32, 32);
+}
+
+.gallery-text-wrap-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1002;
+  padding: 15% 10%;
+}
+
+.gallery-h3 {
+  margin: 0px;
+  font-weight: 600;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 60px;
+  line-height: 1.2;
+  transition: 0.4s color ease;
+}
+
+.gallery-p {
+  font-size: 30px;
+  transition: 0.4s color ease;
+  display: inline-block;
+}
+
+.gallery-div a {
+  z-index: 1003;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
