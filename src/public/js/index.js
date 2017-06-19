@@ -1,6 +1,23 @@
 var preloaderImg = $('.inner-loader-img');
 var transitionEvent = whichTransitionEvent();
 
+function main() {
+  setupPreloader();
+  $(window).load(fadeOutAndRemovePreloaders);
+
+  bindPolyfill();
+  setupLogoImgToggle();
+  $.backstretch("./img/bg.jpg");
+
+  setPageDivHeightToBeWindowHeight();
+  $(window).on('orientationchange', setPageDivHeightToBeWindowHeight);
+
+  setupMobileHoverEffectDelay();
+
+  setupScrollButtons();
+
+}
+
 function setPageDivHeightToBeWindowHeight() {
     var screenHeight = $(window).height();
     $(".first-page-div").css('min-height', toPxString(screenHeight));
@@ -147,19 +164,4 @@ function setupMobileHoverEffectDelay() {
   $('.transition-change-button').on('click', hoverEffectElemClickHandler);
 }
 
-!function main() {
-  setupPreloader();
-  $(window).load(fadeOutAndRemovePreloaders);
-
-  bindPolyfill();
-  setupLogoImgToggle();
-  $.backstretch("./img/bg.jpg");
-
-  setPageDivHeightToBeWindowHeight();
-  $(window).on('orientationchange', setPageDivHeightToBeWindowHeight);
-
-  setupMobileHoverEffectDelay();
-
-  setupScrollButtons();
-
-}();
+main();
