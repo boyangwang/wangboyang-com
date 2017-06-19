@@ -6,24 +6,18 @@ wangboyang.com
 1. install php apache mysql stack
   ```
   sudo apt-get install apache2 php5 mysql-server php5-mysql libapache2-mod-php5 php5-mcrypt
-  curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+  curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
   sudo apt-get install -y nodejs
   ```
 
-2. install git and setup hook
+2. install git
   ```
   sudo apt-get install git
-  Add webhook on github
-  Create ssh key: ssh-keygen -t rsa -C "your_email@example.com"
-  Add to repo deploy keys
   ```
 
-3. pull relevant repos, as www-data so that they are owned by www-data
+3. pull relevant repos
   ```
   cd /var/www/
-  makedir public_html
-  chown -R -L www-data:www-data www
-  sudo -i -u www-data -E
   git clone https://github.com/boyangwang/wangboyang.com.git &&
   git clone https://github.com/boyangwang/Courselooper-Server.git &&
   git clone https://github.com/boyangwang/2013-mobile-group-5.git &&
@@ -40,15 +34,7 @@ wangboyang.com
   sudo a2enmod rewrite proxy_http proxy
   ```
 
-5. install and update node, npm and node modules
-  ```
-  sudo apt-get install node npm
-  npm install -g n && npm install -g supervisor && npm install -g forever
-  n stable
-  npm update -g npm
-  ```
-
-6. import db schema
+5. import db schema
   ```
   Enable php json extension for phpmyadmin: apt-get install php5-json
   Install php-mysql module: sudo apt-get install php5-mysql
@@ -59,24 +45,13 @@ wangboyang.com
   sudo apt-get install imagemagick for img processing in courselooper
   ```
 
-7. crontab
+6. crontab
   ```
   SHELL=/bin/bash
   PATH=/home/boyang/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
   @reboot /home/boyang/Projects/wangboyang.com-project/wangboyang.com/shellscripts/foreverStartAll.sh $>> /home/boyang/Projects/wangboyang.com-project/logs/reboot.log
   @reboot echo "$(date) REBOOTED" $>> /home/boyang/Projects/wangboyang.com-project/logs/reboot.log
 
-  ```
-
-9. WCFUN
-  ```
-  Change db_host variable in WCFUN.php
-  Create user WCFUN:password@'%', grant privileges
-  NO that is not quite right! Remember % somehow doesn't work. Use localhost instead.
-  Turn on remote access for MySQL, comment out in my.cnf:
-  skip-networking
-  bind-address = 127.0.0.1
-  Open port 3306 if needed
   ```
 
 ## Retailer
