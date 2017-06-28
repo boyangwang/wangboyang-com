@@ -681,6 +681,16 @@ a:focus {
 	transition: 0.4s all ease;
 }
 
+.gallery-div video {
+	max-height: 600px;
+	max-width: 100%;
+}
+
+.card.musical audio {
+	margin: -20px -20px 0 -20px;
+	width: calc(100% + 40px);
+}
+
 .gallery-div .gallery-img-wrap-div img {
 	transition: 0.4s all ease;
 	max-height: 600px;
