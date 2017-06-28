@@ -4,6 +4,7 @@ var transitionEvent = whichTransitionEvent();
 function main() {
   setupPreloader();
   $(window).load(fadeOutAndRemovePreloaders);
+  $(window).load(doLightning);
 
   bindPolyfill();
   setupLogoImgToggle();
@@ -70,6 +71,12 @@ function fadeOutAndRemovePreloaders() {
       $('.outer-loader-div').remove();
     }
   );
+}
+
+function doLightning() {
+  setTimeout(function() {
+    $('body').append($('<div class="lightning"></div>'));
+  }, 2000);
 }
 
 function whichTransitionEvent() {
