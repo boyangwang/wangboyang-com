@@ -609,6 +609,7 @@ a:focus {
 
 .works-section-tabs-div {
 	padding-bottom: 20px;
+	margin-bottom: 40px;
 }
 
 .works-section-tab {
@@ -630,6 +631,10 @@ a:focus {
 	/*width: calc(50% - 30px);*/
 	text-align: left;
 	flex: 1;
+}
+
+.card.sketches img {
+	max-width: 100%;
 }
 
 .works-section-tab h3 {

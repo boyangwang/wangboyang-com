@@ -149,7 +149,8 @@ function setupMobileHoverEffectDelay() {
     elem.attr('data-onTheFly', true);
     setTimeout(function () {
       elem.removeAttr('data-onTheFly');
-      window.location = elem.attr('href');
+      if (elem.attr('href'))
+        window.location = elem.attr('href');
     }, 450);
     return false;
   }
@@ -160,15 +161,16 @@ function setupMobileHoverEffectDelay() {
 function setupTabControls() {
   $('.works-section-tabs-div a').on('click', function(e) {
     if ($(this).hasClass('active'))
-      return;
+      return false;
     $('.works-section-tabs-div a.active').removeClass('active');
     $(this).addClass('active');
     var tabName = $(this).attr('data-tab');
     var myTab = $('.works-section-tab[data-tab="'+ tabName +'"]');
     if (myTab.hasClass('active'))
-      return;
+      return false;
     $('.works-section-tab.active').fadeOut(300).removeClass('active');
     myTab.delay(300).fadeIn(300).addClass('active');
+    return false;
   });
   $('.works-section-tabs-div a[data-tab="projects"]').trigger('click');
 }
