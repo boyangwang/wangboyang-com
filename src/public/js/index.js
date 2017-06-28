@@ -12,12 +12,17 @@ function main() {
   setPageDivHeightToBeWindowHeight();
   $(window).on('orientationchange', setPageDivHeightToBeWindowHeight);
 
-  setupMobileHoverEffectDelay();
+  if (isTouchDevice())
+    setupMobileHoverEffectDelay();
 
   setupScrollButtons();
 }
 
 function setPageDivHeightToBeWindowHeight() {
+  function toPxString(height) {
+    return parseInt(height) + 'px';
+  }
+
   var screenHeight = $(window).height();
   $(".first-page-div").css('min-height', toPxString(screenHeight));
   // var footerDivHeight = $('.footer-texts-div').height() + $('.copyright-footer-div').height() + 100;
@@ -36,38 +41,26 @@ function bindPolyfill() {
         throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
       }
 
-      var aArgs = Array.prototype.slice.call(arguments, 1),
-        fToBind = this,
-        fNOP = function () {},
-        fBound = function () {
-          return fToBind.apply(this instanceof fNOP ?
-            this :
-            oThis,
-            // here arguments different from above. because it's referenced from current scoping,
-            // it uses the one from fBound. That is, when fBound is called, the arguments passed.
-            // Conclusion: later invokation args come at end, bind passed arguments at beginning
-            aArgs.concat(Array.prototype.slice.call(arguments)));
-        };
-
+      var aArgs = Array.prototype.slice.call(arguments, 1);
+      var fToBind = this;
+      var fNOP = function () {};
+      var fBound = function () {
+        return fToBind.apply(this instanceof fNOP ?
+          this :
+          oThis,
+          // here arguments different from above. because it's referenced from current scoping,
+          // it uses the one from fBound. That is, when fBound is called, the arguments passed.
+          // Conclusion: later invokation args come at end, bind passed arguments at beginning
+          aArgs.concat(Array.prototype.slice.call(arguments)));
+      };
       if (this.prototype) {
         // Function.prototype doesn't have a prototype property
         fNOP.prototype = this.prototype;
       }
       fBound.prototype = new fNOP();
-
       return fBound;
     };
   }
-}
-
-function toPxString(height) {
-  return parseInt(height) + 'px';
-}
-
-function scrollToElem(elem) {
-  $('html, body').animate({
-    scrollTop: elem.offset().top - parseInt(elem.css('margin-top'))
-  }, 700);
 }
 
 function fadeOutAndRemovePreloaders() {
@@ -97,6 +90,12 @@ function whichTransitionEvent() {
 }
 
 function setupScrollButtons() {
+  function scrollToElem(elem) {
+    $('html, body').animate({
+      scrollTop: elem.offset().top - parseInt(elem.css('margin-top'))
+    }, 700);
+  }
+
   $('.main-container-item-a.works').on('click', function (e) {
     // prevent standard hash navigation (avoid blinking in IE)
     e.preventDefault();
@@ -107,18 +106,6 @@ function setupScrollButtons() {
     // prevent standard hash navigation (avoid blinking in IE)
     e.preventDefault();
     scrollToElem($('.third-page-div'));
-  });
-
-  $('.downward-arrow-div').on('click', function (e) {
-    // prevent standard hash navigation (avoid blinking in IE)
-    e.preventDefault();
-    scrollToElem($('.second-page-div'));
-  });
-
-  $('.upward-arrow-div').on('click', function (e) {
-    // prevent standard hash navigation (avoid blinking in IE)
-    e.preventDefault();
-    scrollToElem($('.first-page-div'));
   });
 }
 
@@ -144,22 +131,18 @@ function isTouchDevice() {
     navigator.maxTouchPoints; // works on IE10/11 and Surface
 };
 
-function hoverEffectElemClickHandler(e) {
-  var elem = $(this);
-  if (elem.attr('data-onTheFly')) {
-    return false;
-  }
-  elem.attr('data-onTheFly', true);
-  setTimeout(function () {
-    elem.removeAttr('data-onTheFly');
-    window.location = elem.attr('href');
-  }, 450);
-  return false;
-}
-
 function setupMobileHoverEffectDelay() {
-  if (!isTouchDevice()) {
-    return;
+  function hoverEffectElemClickHandler(e) {
+    var elem = $(this);
+    if (elem.attr('data-onTheFly')) {
+      return false;
+    }
+    elem.attr('data-onTheFly', true);
+    setTimeout(function () {
+      elem.removeAttr('data-onTheFly');
+      window.location = elem.attr('href');
+    }, 450);
+    return false;
   }
   $('.gallery-div').on('click', 'a', hoverEffectElemClickHandler);
   $('.transition-change-button').on('click', hoverEffectElemClickHandler);
