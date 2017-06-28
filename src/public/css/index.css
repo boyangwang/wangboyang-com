@@ -672,14 +672,9 @@ a:focus {
 	transition: 0.4s all ease;
 }
 
-.galery-div, .gallery-img-wrap-div {
-	height: 300px;
-	width: 100%;
-}
-
 .gallery-div .gallery-img-wrap-div img {
 	transition: 0.4s all ease;
-	max-height: 300px;
+	max-height: 600px;
 	max-width: 100%;
 }
 
