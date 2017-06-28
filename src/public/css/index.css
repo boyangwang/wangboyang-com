@@ -197,7 +197,8 @@ a:focus {
 }
 
 .main-container-item-a {
-	margin-left: 40px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 .navbar-item-a,
@@ -206,7 +207,6 @@ a:focus {
 	padding: .4em .8em;
 	margin-top: .6em;
 	margin-bottom: .6em;
-	margin-right: 0;
 	border: 2px solid #e5e5e5;
 }
 
