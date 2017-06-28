@@ -578,7 +578,7 @@ a:focus {
 	overflow: hidden;
 	margin: -20px -20px 20px -20px;
 	display: inline-block;
-	border-radius: 10px 10px 0 0;
+	border-radius: 7px 7px 0 0;
 }
 
 .vignette {
@@ -617,7 +617,7 @@ a:focus {
 }
 
 .cards {
-	margin: 40px 0 40px 0;
+	margin: 20px 0;
 	font-size: 0;
 	display: flex;
 	justify-content: space-between;
@@ -626,7 +626,7 @@ a:focus {
 .card {
 	padding: 20px;
 	background-color: rgba(0, 0, 0, 0.85);
-	border-radius: 10px;
+	border-radius: 7px;
 	margin: 15px;
 	/*width: calc(50% - 30px);*/
 	text-align: left;
