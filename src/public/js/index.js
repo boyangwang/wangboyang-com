@@ -17,6 +17,8 @@ function main() {
     setupMobileHoverEffectDelay();
 
   setupScrollButtons();
+
+  setupTabControls();
 }
 
 function setPageDivHeightToBeWindowHeight() {
@@ -153,6 +155,22 @@ function setupMobileHoverEffectDelay() {
   }
   $('.gallery-div').on('click', 'a', hoverEffectElemClickHandler);
   $('.transition-change-button').on('click', hoverEffectElemClickHandler);
+}
+
+function setupTabControls() {
+  $('.works-section-tabs-div a').on('click', function(e) {
+    if ($(this).hasClass('active'))
+      return;
+    $('.works-section-tabs-div a.active').removeClass('active');
+    $(this).addClass('active');
+    var tabName = $(this).attr('data-tab');
+    var myTab = $('.works-section-tab[data-tab="'+ tabName +'"]');
+    if (myTab.hasClass('active'))
+      return;
+    $('.works-section-tab.active').fadeOut(300).removeClass('active');
+    myTab.delay(300).fadeIn(300).addClass('active');
+  });
+  $('.works-section-tabs-div a[data-tab="projects"]').trigger('click');
 }
 
 main();

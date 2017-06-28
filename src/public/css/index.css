@@ -603,13 +603,12 @@ a:focus {
 }
 
 .inner {
-	max-width: 960px;
+	max-width: 1080px;
 	margin: 0 auto;
 }
 
 .works-section-tabs-div {
 	padding-bottom: 20px;
-	border-bottom: solid 2px rgba(255, 255, 255, 0.725);
 }
 
 .works-section-tab {
@@ -633,19 +632,24 @@ a:focus {
 	flex: 1;
 }
 
-.card h3 {
+.works-section-tab h3 {
 	padding-bottom: 20px;
 	border-bottom: solid 2px rgba(255, 255, 255, 0.725);
 	font-weight: 600;
 	line-height: 1.2;
 }
 
-.card p {
+.works-section-tab h4.subtitle {
 	font-size: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 60px;
+	border-bottom: solid 2px rgba(255, 255, 255, 0.725);
+	line-height: 1.2;
 }
 
-.works-section-tab.active {
-	display: block;
+.works-section-tab p {
+	font-size: 18px;
+	margin-bottom: 20px;
 }
 
 .section-title {

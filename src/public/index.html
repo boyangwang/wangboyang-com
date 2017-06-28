@@ -51,12 +51,13 @@
             </div>
 
             <div class="works-section-tabs-div">
-                <a class="main-container-item-a transition-change-button active">Projects</a>
-                <a class="main-container-item-a transition-change-button">Sketches</a>
-                <a class="main-container-item-a transition-change-button">Musical</a>
+                <a class="main-container-item-a transition-change-button"  data-tab="projects">Projects</a>
+                <a class="main-container-item-a transition-change-button" data-tab="sketches">Sketches</a>
+                <a class="main-container-item-a transition-change-button" data-tab="musical">Musical</a>
             </div>
 
-            <div class="works-section-tab projects active">
+            <div class="works-section-tab" data-tab="projects">
+                <h4 class="subtitle">Some of my projects as a dev</h4>
                 <div class="cards">
                     <div class="card">
                         <div class="gallery-div retailer">
@@ -67,7 +68,8 @@
                         </div>
                         <h3>Retailer</h3>
                         <p>
-                            Retail simulation game. Used in university introductory decision science classes
+                            Retail simulation game. Used in university introductory decision science classes.
+                            Supports playing bot competition using RestAPI
                         </p>
                     </div>
                     <div class="card">
@@ -78,7 +80,10 @@
                             <a href="http://playground.wangboyang.com/lgg/" target="_blank"></a>
                         </div>
                         <h3>LGQM Generator</h3>
-                        <p>Use RNN (Recurrent Neural Network) to generate novel in Chinese, based on time-travel novel LGQM</p>
+                        <p>
+                            Use RNN (Recurrent Neural Network) to generate novel in Chinese,
+                            based on time-travel novel LGQM
+                        </p>
                     </div>
                 </div>
                 <div class="cards">
@@ -90,7 +95,10 @@
                             <a href="https://github.com/hola/hola_player" target="_blank"></a>
                         </div>
                         <h3>Hola Player</h3>
-                        <p>Contributor to hola_player, an open source web video player based on VideoJS</p>
+                        <p>
+                            Contributor to hola_player, an open source web video player based on VideoJS.
+                            Worked on various parts like container format parsing, streaming, UI and player control
+                        </p>
                     </div>
                     <div class="card">
                         <div class="gallery-div">
@@ -136,11 +144,12 @@
                     </div>
                 </div>
             </div>
-            <div class="works-section-tab sketches">
-                <p>A manga artist at heart, I draw on both pencil&paper and tablet</p>
+
+            <div class="works-section-tab" data-tab="sketches">
+                <h4 class="subtitle">An old-time anime&manga fan, I draw on both pencil&paper and tablet</h4>
             </div>
-            <div class="works-section-tab musical">
-                <p>Also an amateur guitarist and musician. Some recordings and arrangement work below</p>
+            <div class="works-section-tab" data-tab="musical">
+                <h4 class="subtitle">Also an amateur guitarist and musician. Some recordings and arrangement work below</h4>
             </div>
         </div>
 
