@@ -293,7 +293,9 @@ a:focus {
 
 .third-page-div {
 	position: relative;
-	background: url("../img/dark_texture.jpg") repeat;
+	background-color: rgba(0, 0, 0, 0.9);
+	padding-top: 60px;
+	background: url(../img/dark_texture.jpg) repeat;
 }
 
 .self-container-div {
@@ -302,29 +304,40 @@ a:focus {
 }
 
 .profile-pic-div {
-	/*float helps not to push text on the right away, as it allows for text to surround it. inline-block doesn't quite work*/
-	float: left;
-	height: 100%;
-	width: 46%;
-	position: relative;
-	overflow: hidden;
+	background-color: rgba(255, 255, 255, 0.125);
+	flex-grow: 0;
+    flex-shrink: 0;
+    width: 40%;
+    min-width: 25rem;
+    border-radius: 0;
+	border: 0;
+    display: inline-block;
+    position: relative;
 }
 
 .profile-pic-img {
-	position: relative;
-	height: 100%;
-	display: block;
-	min-width: 720px;
-	min-height: 541px;
-	opacity: 0.85;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+	object-fit: cover;
+	object-position: left;
+}
+
+.selfintro-content-div {
+	padding: 5rem 5rem 3rem 5rem;
 }
 
 .selfintro-div {
-	display: inline-block;
-	width: 54%;
-	height: 100%;
-	padding: 30px 20px;
+	display: flex;
+	flex-direction: row;
+
+	padding: 0;
 	position: relative;
+	border: solid 1px rgba(255, 255, 255, 0.725);
 }
 
 .selfintro-p {
@@ -340,7 +353,7 @@ a:focus {
 	font-size: 60px;
 	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-shadow: rgb(42, 42, 42) 0px 3px 8px;
-	font-weight: bold;
+	/*font-weight: bold;*/
 	line-height: 60px;
 	margin-bottom: 20px;
 	margin-top: 40px;
@@ -372,17 +385,12 @@ a:focus {
 .footer-div {
 	padding-top: 40px;
 	position: relative;
-}
-
-.footer-texts-div {
-	/*position: absolute;*/
-	/*left: 15%;*/
-	/*right: 15%;*/
+	display: flex;
 	width: auto;
 	position: relative;
 }
 
-.footer-texts-div h3 {
+.footer-div h3 {
 	margin: 0px;
 	font-weight: 600;
 	display: inline-block;
@@ -397,19 +405,13 @@ a:focus {
 	font-size: 20px;
 	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 600;
-	display: inline-block;
-	width: 48%;
+	flex: 1;
 	text-align: center;
 	color: rgba(229, 229, 229, 0.95);
 }
 
-.footer-text-network-div {
-	float: right;
-}
-
-.footer-text-contact-div {
-	float: left;
-	margin-right: 4%;
+.footer-text-contact-buttons-div {
+	display: flex;
 }
 
 .footer-text-contact-div p,
@@ -644,7 +646,7 @@ a:focus {
 	line-height: 1.2;
 }
 
-.works-section-tab h4.subtitle {
+h4.subtitle {
 	font-size: 20px;
 	padding-bottom: 20px;
 	margin-bottom: 60px;
