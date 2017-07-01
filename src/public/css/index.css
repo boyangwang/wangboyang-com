@@ -306,46 +306,46 @@ a:focus {
 .profile-pic-div {
 	background-color: rgba(255, 255, 255, 0.125);
 	flex-grow: 0;
-    flex-shrink: 0;
-    width: 40%;
-    min-width: 25rem;
-    border-radius: 0;
+	flex-shrink: 0;
+	width: 35%;
+	min-width: 25rem;
+	border-radius: 0;
 	border: 0;
-    display: inline-block;
-    position: relative;
+	display: inline-block;
+	position: relative;
 }
 
 .profile-pic-img {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 0;
 	object-fit: cover;
 	object-position: left;
 }
 
 .selfintro-content-div {
-	padding: 5rem 5rem 3rem 5rem;
+	padding: 5rem 4rem 4rem 4rem;
 }
 
 .selfintro-div {
 	display: flex;
 	flex-direction: row;
-
 	padding: 0;
 	position: relative;
-	border: solid 1px rgba(255, 255, 255, 0.725);
+	border-top: solid 1px rgba(255, 255, 255, 0.725);
+	border-bottom: solid 1px rgba(255, 255, 255, 0.725);
 }
 
 .selfintro-p {
 	font-family: "Enriqueta-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 28px;
+	font-size: 26px;
 	font-style: normal;
 	line-height: 1.4em;
-	margin-bottom: 20px;
+	margin-bottom: 0;
 	transition: font-size .6s;
 }
 
@@ -353,10 +353,10 @@ a:focus {
 	font-size: 60px;
 	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-shadow: rgb(42, 42, 42) 0px 3px 8px;
-	/*font-weight: bold;*/
+	font-weight: 600;
 	line-height: 60px;
 	margin-bottom: 20px;
-	margin-top: 40px;
+	margin-top: 60px;
 	transition: font-size .6s;
 }
 
@@ -386,7 +386,6 @@ a:focus {
 	padding-top: 40px;
 	position: relative;
 	display: flex;
-	width: auto;
 	position: relative;
 }
 
@@ -410,8 +409,15 @@ a:focus {
 	color: rgba(229, 229, 229, 0.95);
 }
 
-.footer-text-contact-buttons-div {
+.footer-text-contact-buttons-div, .network-site-icons-div {
 	display: flex;
+	justify-content: center;
+}
+
+.network-site-icons-div > a {
+	flex: 1;
+	flex-grow: 0;
+	padding: 8px 0;
 }
 
 .footer-text-contact-div p,
@@ -423,6 +429,10 @@ a:focus {
 	text-transform: uppercase;
 	padding: .4em .8em;
 	border: 2px solid #e5e5e5;
+	margin-left: 15px;
+	margin-right: 15px;
+	flex: 1;
+	flex-grow: 0;
 }
 
 .network-site-icons-div i {
