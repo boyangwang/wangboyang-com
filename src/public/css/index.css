@@ -305,13 +305,8 @@ a:focus {
 
 .profile-pic-div {
 	background-color: rgba(255, 255, 255, 0.125);
-	flex-grow: 0;
-	flex-shrink: 0;
-	width: 40%;
-	min-width: 25rem;
-	border-radius: 0;
-	border: 0;
-	display: inline-block;
+	flex: 0 1 40%;
+	align-items: stretch;
 	position: relative;
 }
 
@@ -333,6 +328,7 @@ a:focus {
 
 .selfintro-div {
 	display: flex;
+	flex-wrap: nowrap;
 	flex-direction: row;
 	padding: 0;
 	position: relative;
@@ -360,25 +356,25 @@ a:focus {
 	transition: font-size .6s;
 }
 
-@media (max-width: 1279px) and (min-width: 767px) {
-	.selfintro-p {
-		font-size: 20px;
-	}
-}
-
 @media (max-width: 768px) {
-	.profile-pic-img {
-		left: 0;
-		width: 100%;
-	}
 	.profile-pic-div,
 	.selfintro-div {
+		flex-basis: 100%;
 		width: 100%;
-		height: auto;
+		min-height: 500px;
 	}
 	.second-page-container-div,
 	.self-container-div {
 		height: auto;
+	}
+	.selfintro-div {
+		flex-wrap: wrap;
+		border-top: solid 2px rgba(255, 255, 255, 0.725);
+		border-bottom: solid 2px rgba(255, 255, 255, 0.725);
+	}
+	.footer-text-network-div,
+	.footer-text-contact-div {
+		width: 100%;
 	}
 }
 
@@ -386,6 +382,7 @@ a:focus {
 	padding-top: 40px;
 	position: relative;
 	display: flex;
+	flex-wrap: wrap;
 	position: relative;
 }
 
@@ -404,17 +401,19 @@ a:focus {
 	font-size: 20px;
 	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 600;
-	flex: 1;
+	flex: 1 0 auto;
 	text-align: center;
 	color: rgba(229, 229, 229, 0.95);
+	margin-bottom: 30px;
 }
 
-.footer-text-contact-buttons-div, .network-site-icons-div {
+.footer-text-contact-buttons-div,
+.network-site-icons-div {
 	display: flex;
 	justify-content: center;
 }
 
-.network-site-icons-div > a {
+.network-site-icons-div>a {
 	flex: 1;
 	flex-grow: 0;
 	padding: 8px 0;
