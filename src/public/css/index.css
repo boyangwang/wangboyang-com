@@ -651,6 +651,10 @@ a:focus {
 	flex: 1;
 }
 
+.card.sketches {
+	text-align: center;
+}
+
 .card.sketches img {
 	max-width: 100%;
 }
