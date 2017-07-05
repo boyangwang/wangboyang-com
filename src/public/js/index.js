@@ -3,8 +3,8 @@ var transitionEvent = whichTransitionEvent();
 
 function main() {
   setupPreloader();
-  $(window).load(fadeOutAndRemovePreloaders);
-  $(window).load(doLightning);
+  $(window).on('load', fadeOutAndRemovePreloaders);
+  $(window).on('load', doLightning);
 
   bindPolyfill();
   setupLogoImgToggle();
@@ -122,7 +122,7 @@ function setupPreloader() {
   if (preloaderImg[0].complete) {
     preloaderImg.fadeIn(50);
   } else {
-    preloaderImg.load(function () {
+    preloaderImg.on('load', function () {
       $(this).fadeIn(300);
     });
   }
