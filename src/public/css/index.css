@@ -328,6 +328,7 @@ a:focus {
 
 .selfintro-div {
 	display: flex;
+	display: -webkit-flex;
 	flex-wrap: nowrap;
 	flex-direction: row;
 	padding: 0;
@@ -382,6 +383,7 @@ a:focus {
 	padding-top: 40px;
 	position: relative;
 	display: flex;
+	display: -webkit-flex;
 	flex-wrap: wrap;
 	position: relative;
 }
@@ -410,7 +412,9 @@ a:focus {
 .footer-text-contact-buttons-div,
 .network-site-icons-div {
 	display: flex;
+	display: -webkit-flex;
 	justify-content: center;
+	-webkit-justify-content: center;
 }
 
 .network-site-icons-div>a {
@@ -432,6 +436,8 @@ a:focus {
 	margin-right: 15px;
 	flex: 1;
 	flex-grow: 0;
+	-webkit-flex: 1;
+	-webkit-flex-grow: 0;
 }
 
 .network-site-icons-div i {
@@ -631,6 +637,7 @@ a:focus {
 	margin: 20px 0;
 	font-size: 0;
 	display: flex;
+	display: -webkit-flex;
 	justify-content: space-between;
 }
 
