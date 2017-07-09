@@ -15,6 +15,8 @@ function main() {
 
   if (isTouchDevice())
     setupMobileHoverEffectDelay();
+  if (isSafari())
+    $('.card.musical audio').height('90px');
 
   setupScrollButtons();
 
@@ -139,6 +141,10 @@ function isTouchDevice() {
     ||
     navigator.maxTouchPoints; // works on IE10/11 and Surface
 };
+
+function isSafari() {
+  return window.navigator && /(iPad|iPhone|iPod)/gi.test(window.navigator.userAgent);
+}
 
 function setupMobileHoverEffectDelay() {
   function hoverEffectElemClickHandler(e) {
