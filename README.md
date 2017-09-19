@@ -1,7 +1,7 @@
 wangboyang.com
 ==============
 
-`start .\nginx.exe -c ../wangboyang-com/src/conf/nginx-win-dev.conf`
+`cd ..\..\nginx-1.13.5; .\nginx.exe -c ../wangboyang-com/src/conf/nginx-win-dev.conf`
 `nginx -s reload`
 `nginx -s stop`
 
@@ -10,7 +10,7 @@ wangboyang.com
 `node .\node_modules\selenium-standalone\bin\selenium-standalone start`
 `npm install -g gemini`
 `gemini update --reporter flat`
-`node .\node_modules\gemini\bin\gemini report --reporter flat`
+`node .\node_modules\gemini\bin\gemini update --reporter flat`
 `node .\node_modules\gemini\bin\gemini test --reporter flat`
 
 DEPRECATED `node .\node_modules\phantomjs-prebuilt\bin\phantomjs --webdriver=4444`
