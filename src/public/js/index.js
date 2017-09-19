@@ -11,9 +11,10 @@ function main() {
   $.backstretch("./img/bg.jpg");
 
   setPageDivHeightToBeWindowHeight();
+  $(window).on('resize', setPageDivHeightToBeWindowHeight);
   $(window).on('orientationchange', setPageDivHeightToBeWindowHeight);
-
-  if (isTouchDevice())
+  
+    if (isTouchDevice())
     setupMobileHoverEffectDelay();
   if (isSafari())
     $('.card.musical audio').height('90px');
@@ -35,6 +36,7 @@ function setPageDivHeightToBeWindowHeight() {
   // footerDivHeight = remainingHeight > footerDivHeight ? remainingHeight : footerDivHeight;
   // 	$(".footer-div").css("height", toPxString(footerDivHeight));
   // alert('resized!');
+  $.backstretch("./img/bg.jpg");
 }
 
 function bindPolyfill() {
