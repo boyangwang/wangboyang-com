@@ -13,6 +13,18 @@ module.exports = {
                 browserName: 'chrome'
             }
         },
+        // 'firefox-big': {
+        //     windowSize: '1811x1080',
+        //     desiredCapabilities: {
+        //         browserName: 'firefox'
+        //     }
+        // },
+        // 'firefox-medium': {
+        //     windowSize: '1366x768',
+        //     desiredCapabilities: {
+        //         browserName: 'firefox'
+        //     }
+        // },
         // 'chrome-emulate-iphone6': {
         //     desiredCapabilities: {
         //         browserName: 'chrome',

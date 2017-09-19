@@ -1,4 +1,4 @@
-gemini.suite('big', function(suite0) {
+gemini.suite('index', function(suite0) {
     suite0
         .setUrl('/');
     gemini.suite('first-page-div', function(suite0_1) {
