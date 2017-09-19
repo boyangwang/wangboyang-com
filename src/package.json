@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/boyangwang/wangboyang-com#readme",
   "dependencies": {
-    "webdriverio": "^4.8.0"
+    "debug": "^3.0.1",
+    "gemini": "^5.0.0-alpha.8",
+    "phantomjs-prebuilt": "^2.1.15"
   }
 }
