@@ -6,7 +6,8 @@ wangboyang.com
 `nginx -s stop`
 
 `node .\node_modules\selenium-standalone\bin\selenium-standalone install`
- `node .\node_modules\selenium-standalone\bin\selenium-standalone start`
+`node .\node_modules\selenium-standalone\bin\selenium-standalone install --drivers.firefox.version=0.19.0`
+`node .\node_modules\selenium-standalone\bin\selenium-standalone start`
 `npm install -g gemini`
 `gemini update --reporter flat`
 `gemini test --reporter flat`
