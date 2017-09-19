@@ -26,6 +26,7 @@ body {
 	min-width: 630px;
 	z-index: -100;
 	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
 }
 
 .lightning {
@@ -311,14 +312,15 @@ a:focus {
 }
 
 .profile-pic-div {
-	background-color: rgba(255, 255, 255, 0.125);
-	flex: 0 1 40%;
-	align-items: stretch;
-	position: relative;
+	width: 30%;
+	text-align: center;
 }
 
 .profile-pic-img {
-	display: block;
+	display: inline-block;
+	max-width:100%;
+	max-height:100%;
+	/* display: block;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -327,6 +329,8 @@ a:focus {
 	border-radius: 0;
 	object-fit: cover;
 	object-position: left;
+	 */
+	border-radius: 50%;
 }
 
 .selfintro-content-div {
@@ -337,17 +341,33 @@ a:focus {
 	display: flex;
 	flex-wrap: nowrap;
 	flex-direction: row;
+	justify-content: center;
 	padding: 0;
 	position: relative;
-	border-top: solid 1px rgba(255, 255, 255, 0.725);
-	border-bottom: solid 1px rgba(255, 255, 255, 0.725);
+}
+
+.selfintro-p-div {
+	margin-top: 80px;
+	margin-bottom: 60px;
+}
+
+.selfintro-p-div ul {
+	padding-left: 0;
 }
 
 .selfintro-p {
+	text-align: center;
 	font-family: "AvenirNext", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 26px;
-	font-style: normal;
-	line-height: 1.4em;
+	line-height: 42px;
+	margin-bottom: 0;
+	transition: font-size .6s;
+}
+
+.selfintro-subtitle-p {
+	font-family: "AvenirNext", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 26px;
+	line-height: 42px;
 	margin-bottom: 0;
 	transition: font-size .6s;
 }
@@ -361,6 +381,7 @@ a:focus {
 	margin-bottom: 20px;
 	margin-top: 60px;
 	transition: font-size .6s;
+	text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -368,7 +389,6 @@ a:focus {
 	.selfintro-div {
 		flex-basis: 100%;
 		width: 100%;
-		min-height: 500px;
 	}
 	.second-page-container-div,
 	.self-container-div {
@@ -376,8 +396,6 @@ a:focus {
 	}
 	.selfintro-div {
 		flex-wrap: wrap;
-		border-top: solid 2px rgba(255, 255, 255, 0.725);
-		border-bottom: solid 2px rgba(255, 255, 255, 0.725);
 	}
 	.footer-text-network-div,
 	.footer-text-contact-div {
@@ -391,6 +409,7 @@ a:focus {
 	display: flex;
 	flex-wrap: wrap;
 	position: relative;
+	padding-left: 0;
 }
 
 .footer-div h3 {
