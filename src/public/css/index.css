@@ -312,7 +312,7 @@ a:focus {
 }
 
 .profile-pic-div {
-	width: 30%;
+	width: 24%;
 	text-align: center;
 }
 
@@ -353,6 +353,10 @@ a:focus {
 
 .selfintro-p-div ul {
 	padding-left: 0;
+}
+
+.selfintro-p-div li:first-child .selfintro-p {
+	margin-bottom: 40px;
 }
 
 .selfintro-p {
