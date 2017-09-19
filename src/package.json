@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/boyangwang/wangboyang-com/issues"
   },
-  "homepage": "https://github.com/boyangwang/wangboyang-com#readme"
+  "homepage": "https://github.com/boyangwang/wangboyang-com#readme",
+  "dependencies": {
+    "webdriverio": "^4.8.0"
+  }
 }
