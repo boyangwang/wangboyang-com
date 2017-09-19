@@ -25,6 +25,7 @@ body {
 	/*can't squeeze too little!*/
 	min-width: 630px;
 	z-index: -100;
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .lightning {
@@ -169,14 +170,14 @@ a:focus {
 }
 
 .youve-entered-p {
-	font-weight: 400;
-	font-family: "Enriqueta-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 30px;
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+	font-weight: 600;
+	font-size: 26px;
+	letter-spacing: 1px;
 	/*Gap between logo and youve-entered*/
 	margin-left: 10px;
-	/*So that I can pull down for just 10px*/
-	position: relative;
-	top: 10px;
+	vertical-align: middle;
 }
 
 .header-nav-div {
@@ -303,6 +304,12 @@ a:focus {
 	padding-right: 0;
 }
 
+@media (min-width: 1800px) {
+	.footer-div, .self-container-div {
+		width: 1170px;
+	}
+}
+
 .profile-pic-div {
 	background-color: rgba(255, 255, 255, 0.125);
 	flex: 0 1 40%;
@@ -337,7 +344,7 @@ a:focus {
 }
 
 .selfintro-p {
-	font-family: "Enriqueta-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "AvenirNext", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 26px;
 	font-style: normal;
 	line-height: 1.4em;

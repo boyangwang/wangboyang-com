@@ -134,6 +134,7 @@ function setupLogoImgToggle() {
   $('.logo-img').on('mouseenter click', function (e) {
     $('.youve-entered-p').toggle();
   });
+  $('.youve-entered-p').toggle();
 }
 
 function isTouchDevice() {
