@@ -1,4 +1,5 @@
 .idea/
+src/logs/
 logs/
 src/node_modules/
 .vscode/

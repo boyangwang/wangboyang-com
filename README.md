@@ -10,7 +10,8 @@ wangboyang.com
 `node .\node_modules\selenium-standalone\bin\selenium-standalone start`
 `npm install -g gemini`
 `gemini update --reporter flat`
-`gemini test --reporter flat`
+`node .\node_modules\gemini\bin\gemini report --reporter flat`
+`node .\node_modules\gemini\bin\gemini test --reporter flat`
 
 DEPRECATED `node .\node_modules\phantomjs-prebuilt\bin\phantomjs --webdriver=4444`
 DEPRECATED `java -D"webdriver.gecko.driver=./geckodriver.exe" -jar ./selenium-server-standalone-3.5.3.jar`
