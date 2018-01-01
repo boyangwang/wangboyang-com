@@ -17,7 +17,7 @@ function main() {
 
   bindPolyfill();
   setupLogoImgToggle();
-  $.backstretch("./img/bg.jpg");
+  $.backstretch("./img/compressed/bg.jpg");
 
   setPageDivHeightToBeWindowHeight();
   $(window).on('resize', setPageDivHeightToBeWindowHeight);
