@@ -12,18 +12,16 @@ var transitionEvent = whichTransitionEvent();
 
 function main() {
   setupPreloader();
-  $(window).on('load', fadeOutAndRemovePreloaders);
-  $(window).on('load', doLightning);
 
   bindPolyfill();
   setupLogoImgToggle();
-  $.backstretch("./img/compressed/bg.jpg");
+  $.backstretch('./img/compressed/bg.jpg');
 
   setPageDivHeightToBeWindowHeight();
   $(window).on('resize', setPageDivHeightToBeWindowHeight);
   $(window).on('orientationchange', setPageDivHeightToBeWindowHeight);
   
-    if (isTouchDevice())
+  if (isTouchDevice())
     setupMobileHoverEffectDelay();
   if (isSafari())
     $('.card.musical audio').height('90px');
@@ -39,13 +37,13 @@ function setPageDivHeightToBeWindowHeight() {
   }
 
   var screenHeight = $(window).height();
-  $(".first-page-div").css('min-height', toPxString(screenHeight));
+  $('.first-page-div').css('min-height', toPxString(screenHeight));
   // var footerDivHeight = $('.footer-texts-div').height() + $('.copyright-footer-div').height() + 100;
   // var remainingHeight = $('.third-page-div').height() - $('.self-container-div').height();
   // footerDivHeight = remainingHeight > footerDivHeight ? remainingHeight : footerDivHeight;
-  // 	$(".footer-div").css("height", toPxString(footerDivHeight));
+  // 	$('.footer-div').css('height', toPxString(footerDivHeight));
   // alert('resized!');
-  $.backstretch("./img/compressed/bg.jpg");
+  $.backstretch('./img/compressed/bg.jpg');
 }
 
 function bindPolyfill() {
@@ -134,9 +132,21 @@ function setupScrollButtons() {
 function setupPreloader() {
   if (preloaderImg[0].complete) {
     preloaderImg.fadeIn(50);
+    // TODO will replace all img with fake
+    // then req bg -> onload remove preload -> natural load + intrinst for other imgs
+    // then remove window.load
+    $(window).on('load', function() {
+      fadeOutAndRemovePreloaders();
+      doLightning();
+    });
   } else {
     preloaderImg.on('load', function () {
       $(this).fadeIn(300);
+
+      $(window).on('load', function() {
+        fadeOutAndRemovePreloaders();
+        doLightning();
+      });
     });
   }
 }

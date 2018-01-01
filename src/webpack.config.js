@@ -1,6 +1,8 @@
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -29,9 +31,14 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, 'public/'),
     compress: true,
-    port: 14401
+    port: 14401,
+    publicPath: '/build',
+    hot: true,
+    inline: true
   },
   plugins: [
+    // new CleanWebpackPlugin([path.resolve(__dirname, 'public/build/*.*')]),
+    new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin("styles.css"),
     new UglifyJsPlugin(),
   ],
