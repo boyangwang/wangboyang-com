@@ -4,4 +4,5 @@ logs/
 src/node_modules/
 .vscode/
 src/gemini/screens/**/*.png
-bundle.js
+src/public/build/
+*.log

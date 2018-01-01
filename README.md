@@ -13,6 +13,8 @@ wangboyang.com
 `node .\node_modules\gemini\bin\gemini update --reporter flat`
 `node .\node_modules\gemini\bin\gemini test --reporter flat`
 
+`npm run build`
+
 DEPRECATED `node .\node_modules\phantomjs-prebuilt\bin\phantomjs --webdriver=4444`
 DEPRECATED `java -D"webdriver.gecko.driver=./geckodriver.exe" -jar ./selenium-server-standalone-3.5.3.jar`
 DEPRECATED `node .\node_modules\webdriverio\bin\wdio .\wdio.conf.js`

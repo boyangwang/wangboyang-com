@@ -1,3 +1,12 @@
+import $ from "jquery";
+import './bootstrap.min.js';
+import './jquery.backstretch.min.js';
+
+import '../css/bootstrap.min.css';
+import '../css/font-awesome.min.css';
+import '../css/fonts.css';
+import '../css/index.css';
+
 var preloaderImg = $('.inner-loader-img');
 var transitionEvent = whichTransitionEvent();
 
