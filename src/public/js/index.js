@@ -45,7 +45,7 @@ function setPageDivHeightToBeWindowHeight() {
   // footerDivHeight = remainingHeight > footerDivHeight ? remainingHeight : footerDivHeight;
   // 	$(".footer-div").css("height", toPxString(footerDivHeight));
   // alert('resized!');
-  $.backstretch("./img/bg.jpg");
+  $.backstretch("./img/compressed/bg.jpg");
 }
 
 function bindPolyfill() {

@@ -4,7 +4,8 @@
   "description": "wangboyang.com\r ==============",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "dev-server": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
@@ -28,8 +29,10 @@
     "less-loader": "^4.0.5",
     "phantomjs-prebuilt": "^2.1.15",
     "style-loader": "^0.19.1",
+    "uglifyjs-webpack-plugin": "^1.1.5",
     "url-loader": "^0.6.2",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
   },
   "dependencies": {
     "jquery": "3"
