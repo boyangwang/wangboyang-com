@@ -254,9 +254,9 @@
             <div class="footer-div container">
                 <div class="footer-text-contact-div">
                     <h3>Learn more</h3>
-                    <p>See my resume and blog</p>
+                    <p>See my digest <Lanting> & blog</p>
                     <div class="footer-text-contact-buttons-div">
-                        <a class="footer-text-contact-button transition-change-button" href="https://wangboyang.com/resume.pdf" target="_blank">resume</a>
+                        <a class="footer-text-contact-button transition-change-button" href="https://lanting.wiki" target="_blank">Lanting</a>
                         <a class="footer-text-contact-button transition-change-button" href="/blog" target="_blank">blog</a>
                     </div>
                 </div>
@@ -287,10 +287,13 @@
                 </div>
             </div>
         </div>
-
+        <script>
+            var curYear = new Date().getFullYear();
+            document.getElementById('copyright-p').textContent = '2013 - ' + curYear + ' © wangboyang.com'
+        </script>
         <div class="copyright-footer-div">
             <hr>
-            <p class="copyright-p">2016 - 18 © wangboyang.com</p>
+            <p id="copyright-p" class="copyright-p"></p>
         </div>
     </div>
 
