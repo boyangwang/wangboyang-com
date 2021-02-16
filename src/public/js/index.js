@@ -15,7 +15,7 @@ function main() {
 
   bindPolyfill();
   setupLogoImgToggle();
-  $.backstretch('./img/compressed/bg.jpg');
+  $.backstretch('https://wangboyang-com.oss-accelerate.aliyuncs.com/img/compressed/bg.jpg');
 
   setPageDivHeightToBeWindowHeight();
   $(window).on('resize', setPageDivHeightToBeWindowHeight);
@@ -43,7 +43,7 @@ function setPageDivHeightToBeWindowHeight() {
   // footerDivHeight = remainingHeight > footerDivHeight ? remainingHeight : footerDivHeight;
   // 	$('.footer-div').css('height', toPxString(footerDivHeight));
   // alert('resized!');
-  $.backstretch('./img/compressed/bg.jpg');
+  $.backstretch('https://wangboyang-com.oss-accelerate.aliyuncs.com/img/compressed/bg.jpg');
 }
 
 function bindPolyfill() {

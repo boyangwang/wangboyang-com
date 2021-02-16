@@ -14,7 +14,7 @@ body {
 	color: #e5e5e5;
 	/*Used for auto-sizing background*/
 	background: inherit;
-	background-image: url(../img/compressed/bg.jpg);
+	background-image: url(https://wangboyang-com.oss-accelerate.aliyuncs.com/img/compressed/bg.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
@@ -40,7 +40,7 @@ body {
 	color: #e5e5e5;
 	/*Used for auto-sizing background*/
 	background: inherit;
-	background-image: url(../img/compressed/bg.jpg);
+	background-image: url(https://wangboyang-com.oss-accelerate.aliyuncs.com/img/compressed/bg.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
@@ -297,7 +297,7 @@ a:focus {
 	position: relative;
 	background-color: rgba(0, 0, 0, 0.9);
 	padding-top: 60px;
-	background: url(../img/dark_texture.jpg) repeat;
+	background: url(https://wangboyang-com.oss-accelerate.aliyuncs.com/img/dark_texture.jpg) repeat;
 }
 
 .self-container-div {
